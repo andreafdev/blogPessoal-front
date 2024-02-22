@@ -3,8 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
+  // eslint-disable-next-line prefer-const
   let navigate = useNavigate();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { usuario, handleLogout } = useContext(AuthContext);
 
   function logout() {
@@ -13,6 +15,7 @@ function Navbar() {
     navigate("/login");
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let navbarComponent;
 
   return (
