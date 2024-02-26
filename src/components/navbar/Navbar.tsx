@@ -1,12 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
-  // eslint-disable-next-line prefer-const
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { usuario, handleLogout } = useContext(AuthContext);
 
   function logout() {
@@ -15,19 +14,20 @@ function Navbar() {
     navigate("/login");
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let navbarComponent;
 
   return (
     <>
-      <div className="w-full bg-indigo-900 text-white flex justify-center py-4">
+      <div className="w-full bg-red-400 text-white flex justify-center py-4">
         <div className="container flex justify-between text-lg">
           <Link to="/home" className="text-2xl font-bold uppercase">
             Blog Pessoal
           </Link>
 
           <div className="flex gap-4">
-            <div className="hover:underline">Postagens</div>
+            <Link to="/postagens" className="hover:underline">
+              Postagens
+            </Link>
             <Link to="/temas" className="hover:underline">
               Temas
             </Link>
